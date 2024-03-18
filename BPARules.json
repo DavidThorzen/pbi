@@ -611,27 +611,27 @@
     "FixExpression": "FormatString = \"MMMM yyyy\"",
     "CompatibilityLevel": 1200
   },
-  {
-    "ID": "PROVIDE_FORMAT_STRING_FOR_MEASURES",
-    "Name": "[Formatting] Provide format string for measures",
-    "Category": "Formatting",
-    "Description": "Visible measures should have their format string property assigned",
-    "Severity": 3,
-    "Scope": "Measure",
-    "Expression": "not IsHidden \r\nand not Table.IsHidden \r\nand string.IsNullOrWhitespace(FormatString)",
-    "CompatibilityLevel": 1200
-  },
-  {
-    "ID": "NUMERIC_COLUMN_SUMMARIZE_BY",
-    "Name": "[Formatting] Do not summarize numeric columns",
-    "Category": "Formatting",
-    "Description": "Numeric columns (integer, decimal, double) should have their SummarizeBy property set to \"None\" to avoid accidental summation in Power BI (create measures instead).",
-    "Severity": 3,
-    "Scope": "DataColumn, CalculatedColumn, CalculatedTableColumn",
-    "Expression": "(\r\nDataType = \"Int64\"\r\nor \r\nDataType=\"Decimal\" \r\nor \r\nDataType=\"Double\"\r\n)\n\r\nand \r\nSummarizeBy <> \"None\"\r\n\nand not (IsHidden or Table.IsHidden)",
-    "FixExpression": "SummarizeBy = AggregateFunction.None",
-    "CompatibilityLevel": 1200
-  },
+  // {
+  //   "ID": "PROVIDE_FORMAT_STRING_FOR_MEASURES",
+  //   "Name": "[Formatting] Provide format string for measures",
+  //   "Category": "Formatting",
+  //   "Description": "Visible measures should have their format string property assigned",
+  //   "Severity": 3,
+  //   "Scope": "Measure",
+  //   "Expression": "not IsHidden \r\nand not Table.IsHidden \r\nand string.IsNullOrWhitespace(FormatString)",
+  //   "CompatibilityLevel": 1200
+  // },
+  // {
+  //   "ID": "NUMERIC_COLUMN_SUMMARIZE_BY",
+  //   "Name": "[Formatting] Do not summarize numeric columns",
+  //   "Category": "Formatting",
+  //   "Description": "Numeric columns (integer, decimal, double) should have their SummarizeBy property set to \"None\" to avoid accidental summation in Power BI (create measures instead).",
+  //   "Severity": 3,
+  //   "Scope": "DataColumn, CalculatedColumn, CalculatedTableColumn",
+  //   "Expression": "(\r\nDataType = \"Int64\"\r\nor \r\nDataType=\"Decimal\" \r\nor \r\nDataType=\"Double\"\r\n)\n\r\nand \r\nSummarizeBy <> \"None\"\r\n\nand not (IsHidden or Table.IsHidden)",
+  //   "FixExpression": "SummarizeBy = AggregateFunction.None",
+  //   "CompatibilityLevel": 1200
+  // },
   {
     "ID": "PERCENTAGE_FORMATTING",
     "Name": "[Formatting] Percentages should be formatted with thousands separators and 1 decimal",
